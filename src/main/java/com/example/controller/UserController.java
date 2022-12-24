@@ -7,17 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.example.ResponseEntity;
 
 import com.example.dto.LoginDto;
-import com.example.dto.ParkingSlotModel;
+
 import com.example.dto.UserDto;
+import com.example.model.ParkingSlotModel;
 import com.example.service.IUserService;
 
 @RestController
+@RequestMapping("/parkingLot")
 public class UserController {
 
 	@Autowired

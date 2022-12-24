@@ -5,8 +5,8 @@ import java.util.List;
 import com.example.ResponseEntity;
 
 import com.example.dto.LoginDto;
-import com.example.dto.ParkingSlotModel;
 import com.example.dto.UserDto;
+import com.example.model.ParkingSlotModel;
 
 public interface IUserService {
 

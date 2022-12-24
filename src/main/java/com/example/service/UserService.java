@@ -12,9 +12,9 @@ import org.springframework.web.client.RestTemplate;
 import com.example.ResponseEntity;
 
 import com.example.dto.LoginDto;
-import com.example.dto.ParkingSlotModel;
 import com.example.dto.UserDto;
 import com.example.exception.UserException;
+import com.example.model.ParkingSlotModel;
 import com.example.model.UserModel;
 import com.example.repository.IUserRepo;
 import com.example.utility.JwtTokenUtil;
@@ -90,7 +90,7 @@ public class UserService implements IUserService {
 		LoginDto loginDto = jwtTokenUtil.decode(token);
 		Optional<UserModel> user = userRepo.findByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
 		if (user.get().getRole().equals("Guard")) {
-			ParkingSlotModel[] parkingData = restTemplate.getForObject("http://localhost:8081/info",
+			ParkingSlotModel[] parkingData = restTemplate.getForObject("http://localhost:8081/parkingSlot/info",
 					ParkingSlotModel[].class);
 			return parkingData;
 		} else {
@@ -104,7 +104,7 @@ public class UserService implements IUserService {
 		LoginDto loginDto = jwtTokenUtil.decode(token);
 		Optional<UserModel> user = userRepo.findByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
 		if (user.get().getRole().equals("Admin")) {
-			ParkingSlotModel[] parkingData = restTemplate.getForObject("http://localhost:8081/info",
+			ParkingSlotModel[] parkingData = restTemplate.getForObject("http://localhost:8081/parkingSlot/info",
 					ParkingSlotModel[].class);
 			return parkingData;
 		} else {

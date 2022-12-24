@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.example.model;
 
 import java.time.LocalDateTime;
 
@@ -11,12 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ParkingSlotModel {
     
-	private int slotId;
-	private String carNumber;
+	private int slotNumber;
+	private String carRegNum;
 	private String carName;
 	private String carOwnerName;
 	private LocalDateTime entryTime;
 	private LocalDateTime exitTime;
 	private Double fare;
-	private boolean slotAvailable;
+	
+	
 }
